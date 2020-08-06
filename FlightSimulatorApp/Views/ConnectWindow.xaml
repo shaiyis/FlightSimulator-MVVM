@@ -1,0 +1,30 @@
+﻿<Window x:Class="FlightSimulatorApp.Views.ConnectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp.Views"
+        mc:Ignorable="d"
+        Title="Connect Window" Height="300" Width="400">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="CONNECT TO SIMULATOR" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"/>
+        <TextBlock Text="IP" Grid.Column="1" Grid.Row="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Gisha"/>
+        <TextBox x:Name="IpText"  Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Height="30" FontSize="17" Text="{Binding Path=VMFlightServerIP, Mode=TwoWay,UpdateSourceTrigger=Explicit}" FontFamily="Gisha"/>
+        <TextBlock Text="Port" Grid.Column="1" Grid.Row="2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Gisha"/>
+        <TextBox x:Name="PortText" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Height="30" FontSize="17" Text="{Binding Path=VMFlightInfoPort, Mode=TwoWay,UpdateSourceTrigger=Explicit}"  FontFamily="Gisha"/>
+        <Button x:Name="ConnectButton" Content="Connect" Grid.Column="2" Grid.Row="3" Height="30" Width="60" FontFamily="Gisha" Click="ConnectButton_Click"/>
+    </Grid>
+</Window>

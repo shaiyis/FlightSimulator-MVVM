@@ -1,0 +1,50 @@
+﻿<Window x:Class="FlightSimulatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp"
+        xmlns:Views="clr-namespace:FlightSimulatorApp.Views"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="675" Width="1200">
+    <Grid Background="CadetBlue">
+        <TextBlock Text="Flight Simulator" FontSize="40" Margin="0,0,499.2,548" HorizontalAlignment="Center" FontFamily="Gisha" FontWeight="Bold"/>
+        <Button x:Name="connectButton" Margin="50,58,957.2,538" FontSize="30" Click="ConnectButton_Click" Background="#FF0FAE00" BorderBrush="#FF0A0202">Connect
+        </Button>
+        <TextBlock Name="Warning" FontSize="22" Margin="243,58,744.2,514" Text="{Binding VMError, Mode=OneWay}" FontFamily="Gisha" FontWeight="Bold" Foreground="#FFD82E2E" />
+        <Button x:Name="disconnectButton" Margin="456,58,540.2,538" FontSize="30" Click="DisconnectButton_Click" Background="#FFC41616" BorderBrush="#FF0A0404">Disconnect
+        </Button>
+        <Views:MyMap x:Name ="GameMap" RenderTransformOrigin="0.5,0.5" Margin="-347,-152,146.2,-262" Height="1062" VerticalAlignment="Top" FontWeight="Bold">
+            <Views:MyMap.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Views:MyMap.RenderTransform>
+        </Views:MyMap>
+        <Viewbox Margin="538,0,-195,414" >
+            <Views:DashBoard x:Name="myDashBoard"  Height="392" Width="900"/>
+        </Viewbox>
+        <Views:FlightControls x:Name="MyControls" Margin="698,216,0.2,0"/>
+        <Viewbox Margin="300,115,236.2,450" >
+            <TextBlock x:Name="latitudeText" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding Path=VMLatitude, Mode=OneWay, StringFormat={}{0:N3}\,}" Width="66" Height="29"/>
+        </Viewbox>
+        <Viewbox Margin="477,115,92.333,454.333" RenderTransformOrigin="0.5,0.5" >
+            <Viewbox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.116"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.665"/>
+                </TransformGroup>
+            </Viewbox.RenderTransform>
+            <TextBlock x:Name="longitudeText" FontSize="9" Text="{Binding Path=VMLongitude, Mode=OneWay, StringFormat={}{0:N3}}" HorizontalAlignment="Right" Width="145" Height="30"/>
+        </Viewbox>
+        <Viewbox Margin="0,115,655.333,450.333" >
+            <TextBlock x:Name="placeText" FontSize="9" Text="{Binding Path=VMPlace, Mode=OneWay}" HorizontalAlignment="Right" Width="194" Height="30"/>
+        </Viewbox>
+    </Grid>
+</Window>

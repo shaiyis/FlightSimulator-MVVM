@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="FlightSimulatorApp.Views.DashBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FF7C7272" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="10" FontSize="60" Grid.Row="0" Grid.Column="1" 
+                   Grid.ColumnSpan="2" FontWeight="Bold">DashBoard
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="1" Grid.Column="0" 
+                   FontWeight="Bold">Air Speed:
+        </TextBlock>
+        <TextBlock x:Name="AirSpeedText" Text="{Binding VMAirspeedIndicatorIndicatedSpeedKt, Mode=OneWay}" HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="1" Grid.Column="1" 
+                   FontWeight="Bold">
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="2" Grid.Column="0" 
+                    FontWeight="Bold">Altitude:
+        </TextBlock>
+        <TextBlock x:Name="AltitudeText" HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="2" Grid.Column="1" 
+                   FontWeight="Bold" Text="{Binding VMGpsIndicatedAltitudeFt, Mode=OneWay}">
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="3" Grid.Column="0" 
+                    FontWeight="Bold">Roll:
+        </TextBlock>
+        <TextBlock x:Name="RollText" HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="3" Grid.Column="1" 
+                   FontWeight="Bold" Text="{Binding VMAttitudeIndicatorInternalRollDeg, Mode=OneWay}">
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="4" Grid.Column="0" 
+                    FontWeight="Bold" >Pitch:
+        </TextBlock>
+        <TextBlock x:Name="PitchText" HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="4" Grid.Column="1" 
+                   FontWeight="Bold" Text="{Binding VMAttitudeIndicatorInternalPitchDeg, Mode=OneWay}">
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="1" Grid.Column="2" 
+                   FontWeight="Bold" >Altimeter:
+        </TextBlock>
+        <TextBlock x:Name="AltimeterText" HorizontalAlignment="Center" Margin="10" FontSize="30" Grid.Row="1" Grid.Column="3" 
+                   FontWeight="Bold" Text="{Binding VMAltimeterIndicatedAltitudeFt, Mode=OneWay}">
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,20.2,0,81.4" FontSize="30" Grid.Row="2" Grid.Column="2" 
+                   Grid.ColumnSpan="2" FontWeight="Bold" Grid.RowSpan="2">Heading Degree:
+        </TextBlock>
+        <TextBlock x:Name="HeadingDegText" HorizontalAlignment="Center" Margin="10" FontSize="30" Grid.Row="2" Grid.Column="3" 
+                   FontWeight="Bold" Text="{Binding VMIndicatedHeadingDeg, Mode=OneWay}" >
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="3" Grid.Column="2" 
+                   Grid.ColumnSpan="2" FontWeight="Bold">Ground Speed:
+        </TextBlock>
+        <TextBlock x:Name="GroundSpeedText" HorizontalAlignment="Center" Margin="10" FontSize="30" Grid.Row="3" Grid.Column="3" 
+                   FontWeight="Bold" Text="{Binding VMGpsIndicatedGroundSpeedKt, Mode=OneWay}">
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10" FontSize="30" Grid.Row="4" Grid.Column="2" 
+                   Grid.ColumnSpan="2" FontWeight="Bold">Vertical Speed:
+        </TextBlock>
+        <TextBlock x:Name="VerticalSpeedText" HorizontalAlignment="Center" Margin="10" FontSize="30" Grid.Row="4" Grid.Column="3" 
+                   FontWeight="Bold" Text="{Binding VMGpsIndicatedVerticalSpeed, Mode=OneWay}">
+        </TextBlock>
+    </Grid>
+</UserControl>

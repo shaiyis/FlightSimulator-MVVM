@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="FlightSimulatorApp.Views.MyMap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.Views"
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <m:Map x:Name="GameMap" ZoomLevel="9" Center="32.0055,34.8854" CredentialsProvider="TEEqcjvE2zOsnJOXaEoa~qLsEXv3B0UUVkh5et_wpGA~AianklKOQr0Urm4s37fDFXAxxyuvtZQQCXU2lWzrHr99KDTNE40Z82JaEfB0q3cv">
+            <m:Pushpin x:Name="pushPin" Location="{Binding Path=VMCoordinates, Mode=OneWay}" >
+                <m:Pushpin.Background>
+                    <ImageBrush ImageSource="airplane-icon.jpg">
+                    </ImageBrush>
+                </m:Pushpin.Background>
+            </m:Pushpin>
+        </m:Map>   
+    </Grid>
+</UserControl>
